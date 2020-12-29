@@ -1,0 +1,29 @@
+spring:
+      datasource:
+
+
+      profiles:
+               active: qa
+      cloud:
+        config:
+          uri: http://localhost:8888
+
+server.port: 4044
+
+management.server.port: 4046
+management.endpoints.web.base-path: "/actuator"
+management.health.db.enabled: true
+management.trace.http.enabled: true
+
+management.endpoint.beans.enabled: true
+management.endpoints.web.exposure.include : "*"
+
+management.endpoint.health.show-details: always
+spring.application.name: "employee-service"
+
+logging.level.root : info
+logging.level.com.example.resources : trace
+logging.level.com.example.exception.handler: error
+logging.pattern.console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+employee-account-service : "http://employee-account-service/"
